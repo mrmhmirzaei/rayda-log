@@ -1,0 +1,124 @@
+div.container{
+    background-color: var(--chat_color);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.form{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: .4rem;
+    min-width: 300px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+div.head h4{
+    color: rgb(var(--primary));
+    margin-bottom: 5px;
+}
+
+div.head span{
+    font-size: .8rem;
+}
+
+div.inputs{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    margin-top: 30px;
+    transition: all .3s;
+}
+
+div.inputs.focus{
+    border-color: rgba(var(--primary), .5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all .3s;
+}
+
+div.inputs input{
+    padding: 10px;
+    border-radius: .5rem;
+}
+
+div.inputs input::placeholder{
+    color: #888;
+    transition: all .3s;
+}
+
+div.inputs.focus input:focus::placeholder{
+    color: #fff;
+    transition: all .3s;
+}
+
+div.inputs:not(.full) input[type="password"],
+div.inputs:not(.full) + div.buttons{
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+div.buttons{
+    margin-top: 20px;
+}
+
+div.buttons button{
+    float: left;
+    background-color: rgb(var(--accent));
+    color: #fff;
+    padding: 8px 25px;
+    border-radius: 2rem;
+    height: 30px;
+    line-height: 0px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(var(--accent), .3);
+    transition: all .3s;
+}
+
+div.buttons button:hover{
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(var(--accent), .3);
+    transition: all .3s;
+}
+
+div.buttons button:disabled{
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, .1);
+    box-shadow: none;
+    color: #000;
+    transition: all .3s;
+}
+
+/*
+    Small
+*/
+@media only screen and (max-width: 600px) {
+    div.form{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
+
+    div.inputs{
+        margin: 10px 10vw;
+        margin-top: 30px;
+    }
+
+    div.buttons{
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+        right: 20px;
+    }
+}

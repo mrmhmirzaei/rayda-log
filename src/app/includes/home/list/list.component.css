@@ -1,0 +1,67 @@
+div.items{
+    display: flex;
+    flex-direction: column;
+}
+
+div.items div.item{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+div.items div.item.title{
+    color: rgb(var(--primary));
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+}
+
+div.items div.item:not(.title){
+    padding: 20px 30px;
+}
+
+div.items div.item:not(.title):not(.focus){
+    cursor: pointer;
+}
+
+div.items div.item:not(.title):hover{
+    background-color: rgba(0, 0, 0, .04);
+}
+
+div.items div.item:not(.title):focus,
+div.items div.item:not(.title).focus{
+    background: linear-gradient(-118deg,rgba(var(--primary),1),rgba(var(--primary),.7));
+    color: #fff;
+    box-shadow: 0 4px 2pc rgba(0, 0, 0, .3);
+}
+
+div.items div.item:not(.title) div.content{
+    width: 100%;
+}
+
+div.items div.item:not(.title) div.content div.name{
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+div.items div.item:not(.title) div.content div.description{
+    font-size: .8rem;
+}
+
+div.items div.item:not(.title) span{
+    background-color: rgb(var(--accent));
+    color: #fff;
+    border-radius: 2rem;
+    padding: 5px;
+    min-width: 15px;
+    min-height: 15px;
+    text-align: center;
+    height: 100%;
+    font-size: .8rem;
+}
+
+div.items div.item:not(.title):focus span,
+div.items div.item:not(.title).focus span{
+    display: none;
+}

@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+:root{
+    --bg_color: #ffffff;
+    --shadow_color: rgba(0, 0, 0, 0.05);
+    --chat_color: #f8f8f8;
+    --text_color: #000000;
+
+    --primary: 115,103,240;
+    --accent: 40,199,111;
+    --green: 40,199,111;
+    --red: 234,84,85;
+    --yellow: 255,159,67;
+
+    --direction: rtl;
+
+    --appbar_width: 350px;
+}
+
+*{
+    border: none;
+    outline: none;
+    user-select: none;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    margin: 0;
+    color: var(--text_color);
+    direction: var(--direction);
+    overflow: hidden;
+}
+
+p, pre{
+    margin: 0;
+}

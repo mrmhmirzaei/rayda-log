@@ -1,0 +1,8 @@
+<div class="header" [ngClass]="{'info': info == true}">
+    <div id="avatar" class="avatar" [ngClass]="{'green': online == true, 'red': online == false}" (click)="info = !info">
+        <img *ngIf="user['picture'] != null" [src]="user['picture']" [alt]="user['firstname']+' '+user['lastname']">
+        <span *ngIf="user['picture'] == null">{{user['firstname'].slice(0,1)}}</span>
+    </div>
+    <div class="app-title">رایدا لاگ</div>
+    <div class="name">{{user['firstname']+' '+user['lastname']}}</div>
+</div>

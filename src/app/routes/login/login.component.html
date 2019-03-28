@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="form">
+    <div class="head">
+      <h4>ورود با حساب کاربری</h4>
+      <span>ورود به حساب کاربری با کد ملی و رمز عبور</span>
+    </div>
+    <div class="inputs">
+      <input type="text" name="uid" placeholder="کد ملی" onfocus="this.parentElement.classList.add('focus')" onblur="this.parentElement.classList.remove('focus')" (keyup.enter)="activePassword()">
+      <input type="password" name="password" placeholder="رمزعبور" onfocus="this.parentElement.classList.add('focus')" onblur="this.parentElement.classList.remove('focus')" >
+    </div>
+    <div class="buttons">
+      <button id="submit" (click)="submit()">ورود</button>
+    </div>
+  </div>
+</div>

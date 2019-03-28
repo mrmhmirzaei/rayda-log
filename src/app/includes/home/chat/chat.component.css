@@ -1,0 +1,150 @@
+div.start-chat{
+    z-index: 1;
+}
+
+div.start-chat div.circle{
+    background-color: var(--bg_color);
+    width: 100px;
+    height: 100px;
+    line-height: 130px;
+    text-align: center;
+    box-shadow: 0 3px 6px var(--shadow_color);
+    border-radius: 50%;
+}
+
+div.start-chat div.text{
+    margin-top: 30px;
+    background-color: var(--bg_color);
+    padding: 10px 30px;
+    border-radius: 2rem;
+    box-shadow: 0 2px 4px var(--shadow_color);
+    font-size: .9rem;
+    cursor: pointer;
+}
+
+div.chat-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--chat_color);
+    z-index: -1;
+}
+
+div.logs{
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100vh;
+    margin: 0 20px;
+    overflow-y: auto;
+}
+
+div.logs div.log{
+    max-width: 400px;
+    margin-bottom: 20px;
+    animation: log .3s;
+}
+
+div.logs div.log div.content{
+    background-color: #fff;
+    padding: 10px 20px;
+    min-width: 250px;
+    border-radius: .3rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .1);
+    display: flex;
+    flex-direction: column;
+}
+
+div.logs div.log div.content div.action{
+    margin-top: 10px;
+}
+
+div.logs div.log div.content span{
+    padding: 5px 15px;
+    border-radius: 2rem;
+    font-size: .8rem;
+    text-align: center;
+    float: left;
+    background-color: rgba(0, 0, 0, .05);
+    color: #000;
+}
+
+div.logs div.log div.content span.success{
+    background-color: rgb(var(--green));
+    color: #fff;
+}
+
+div.logs div.log div.content span.error{
+    background-color: rgb(var(--red));
+    color: #fff;
+}
+
+div.logs div.log div.content span.warning{
+    background-color: rgb(var(--yellow));
+    color: #fff;
+}
+
+div.logs div.log span.time{
+    float: left;
+    margin-top: 10px;
+    margin-left: 15px;
+    font-size: .9rem;
+}
+
+@keyframes log{
+    0%{
+        opacity: 0;
+        transform: scale(.4);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media only screen and (min-width: 851px) {
+    div.start-chat{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: calc(100vw - var(--appbar_width));
+    }
+
+    div.chat-background{
+        right: var(--appbar_width);
+    }
+
+    div.logs{
+        width: calc((100vw - var(--appbar_width)) - 19px);
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    div.start-chat{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% , -50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div.chat-background{
+        right: 0
+    }
+
+    div.logs{
+        position: absolute;
+        left: -20px;
+        right: 0;
+        z-index: -1;
+    }
+
+    div.logs div.log{
+        max-width: calc(100vw - 40px);
+    }
+}

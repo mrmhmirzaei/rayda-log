@@ -1,0 +1,59 @@
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg,hsla(0,0%,97.3%,.95) 44%,hsla(0,0%,97.3%,.46) 73%,hsla(0,0%,100%,0));
+}
+
+div.search-bar{
+    position: relative;
+    top: 20px;
+    right: calc(30px + var(--appbar_width));
+    width: calc((100vw - var(--appbar_width)) - 100px);
+    background-color: #fff;
+    z-index: 9;
+    padding: 0 20px;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,.03);
+    border-radius: .5rem;
+    border: 1px solid rgba(0, 0, 0, .1);
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    transition: all .3s;
+}
+
+div.search-bar.focus{
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.1);
+    border: 1px solid rgba(var(--primary), .5);
+    transition: all .3s;
+}
+
+div.search-bar svg{
+    transform: scaleX(-1);
+}
+
+div.search-bar input{
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    height: 45px;
+    margin-right: 20px;
+}
+
+div.search-bar input::placeholder{
+    padding-right: 0;
+    transition: all .1s;
+}
+
+div.search-bar input:focus::placeholder{
+    padding-right: 5px;
+    transition: all .3s;
+}
+
+@media only screen and (max-width: 850px) {
+    div.search-bar{
+        right: 20px;
+        width: calc(100vw - 90px);
+    }
+}

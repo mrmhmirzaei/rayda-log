@@ -1,0 +1,9 @@
+div.app-bar{
+    background-color: var(--bg_color);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: var(--appbar_width);
+    box-shadow: -3px 0 6pc var(--shadow_color);
+}

@@ -1,0 +1,10 @@
+<div class="items">
+    <div class="item title">برنامه ها</div>
+    <div class="item" (click)="selectApp($event)" *ngFor="let item of items">
+        <div class="content">
+            <div class="name">{{item['name']}}</div>
+            <div class="description">{{item['description']}}</div>
+        </div>
+        <span>{{item['logs']}}</span>
+    </div>
+</div>
