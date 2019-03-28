@@ -14,6 +14,15 @@ div.header.info{
     height: 200px;
 }
 
+button{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 50%;
+}
+
 div.avatar{
     width: 45px;
     height: 45px;
@@ -66,4 +75,10 @@ div.avatar.yellow::after{
 div.header:not(.info) div.name,
 div.header.info div.app-title{
     display: none;
+}
+
+@media only screen and (min-width: 851px) {
+    button{
+        display: none;
+    }
 }
